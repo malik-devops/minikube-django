@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-11-15T14:59:48Z"
+  labels:
+    app: django-app
+  name: django-app
+  namespace: project
+  resourceVersion: "248942"
+  uid: 4acb16fe-40f3-4ff7-a696-46d717bc1b62
+spec:
+  clusterIP: 10.99.3.127
+  clusterIPs:
+  - 10.99.3.127
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30859
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: django-app
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
